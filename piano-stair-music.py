@@ -147,91 +147,90 @@ while True:
     si.set_volume(sound)
     high_do.set_volume(sound)
 
+    def resource_path(relative_path):
+        base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+        return os.path.join(base_path, relative_path)
 
-def resource_path(relative_path):
-    base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
+        form_class = uic.loadUiType('first.ui')[0]
+        form_class1 = uic.loadUiType('second.ui')[0]
+        form_class2 = uic.loadUiType('third.ui')[0]
+        form_class3 = uic.loadUiType('fourth.ui')[0]
+        form_class4 = uic.loadUiType('fifth.ui')[0]
+        form_class5 = uic.loadUiType('sixth.ui')[0]
+        form_class6 = uic.loadUiType('seventh.ui')[0]
 
-form_class = uic.loadUiType('first.ui')[0]
-form_class1 = uic.loadUiType('second.ui')[0]
-form_class2 = uic.loadUiType('third.ui')[0]
-form_class3 = uic.loadUiType('fourth.ui')[0]
-form_class4 = uic.loadUiType('fifth.ui')[0]
-form_class5 = uic.loadUiType('sixth.ui')[0]
-form_class6 = uic.loadUiType('seventh.ui')[0]
+        day = 6
 
-day = 6
+        class WindowClass(QMainWindow, form_class):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
 
-class WindowClass(QMainWindow, form_class):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
+        class secondwindow(QDialog,QWidget,form_class1):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
 
-class secondwindow(QDialog,QWidget,form_class1):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-
-class thirdwindow(QDialog,QWidget, form_class2):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
-
-
-class fourthwindow(QDialog,QWidget,form_class3):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
+        class thirdwindow(QDialog,QWidget, form_class2):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
 
 
-class fifthwindow(QDialog,QWidget, form_class4):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
+        class fourthwindow(QDialog,QWidget,form_class3):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
 
-class sixthwindow(QDialog,QWidget, form_class5):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
 
-class seventhwindow(QDialog,QWidget, form_class6):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)
+        class fifthwindow(QDialog,QWidget, form_class4):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
 
-if __name__ == '__main__':
-    if day == 0:
-        app = QApplication(sys.argv)
-        myWindow = WindowClass()
-        myWindow.show()
-        app.exec_()
-    elif day == 1:
-        app = QApplication(sys.argv)
-        myWindow = secondwindow()
-        myWindow.show()
-        app.exec_()
-    elif day == 2:
-        app = QApplication(sys.argv)
-        myWindow = thirdwindow()
-        myWindow.show()
-        app.exec_()
-    elif day == 3:
-        app = QApplication(sys.argv)
-        myWindow = fourthwindow()
-        myWindow.show()
-        app.exec_()
-    elif day == 4:
-        app = QApplication(sys.argv)
-        myWindow = fifthwindow()
-        myWindow.show()
-        app.exec_()
-    elif day == 5:
-        app = QApplication(sys.argv)
-        myWindow = sixthwindow()
-        myWindow.show()
-        app.exec_()
-    else:
-        app = QApplication(sys.argv)
-        myWindow = seventhwindow()
-        myWindow.show()
-        app.exec_()
+        class sixthwindow(QDialog,QWidget, form_class5):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
+
+        class seventhwindow(QDialog,QWidget, form_class6):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
+
+        if __name__ == '__main__':
+            if day == 0:
+                app = QApplication(sys.argv)
+                myWindow = WindowClass()
+                myWindow.show()
+                app.exec_()
+            elif day == 1:
+                app = QApplication(sys.argv)
+                myWindow = secondwindow()
+                myWindow.show()
+                app.exec_()
+            elif day == 2:
+                app = QApplication(sys.argv)
+                myWindow = thirdwindow()
+                myWindow.show()
+                app.exec_()
+            elif day == 3:
+                app = QApplication(sys.argv)
+                myWindow = fourthwindow()
+                myWindow.show()
+                app.exec_()
+            elif day == 4:
+                app = QApplication(sys.argv)
+                myWindow = fifthwindow()
+                myWindow.show()
+                app.exec_()
+            elif day == 5:
+                app = QApplication(sys.argv)
+                myWindow = sixthwindow()
+                myWindow.show()
+                app.exec_()
+            else:
+                app = QApplication(sys.argv)
+                myWindow = seventhwindow()
+                myWindow.show()
+                app.exec_()
