@@ -123,7 +123,13 @@ t8.start()
 
 while True:
     data = socket.recv(1024)
-    print("Received: %s" % data)
+    data = data.decode('utf-8')
+    data = data.split(',')
+    lst = []
+    lst = data
+    print(lst)
+    time.sleep(1)
+    #print("Received: %s" % data)
     day = datetime.datetime.today().weekday()
 
     if day == 0 and change_st == 1:
