@@ -6,7 +6,6 @@ import pygame
 import random
 import datetime
 import time
-import keyboard
 import threading
 from bluetooth import *
 
@@ -40,65 +39,65 @@ print(musical)
 
 def do_play():
     while True:
-        if data == "do":
+        if list[1] == '1':
             channel1.play(do)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
 def re_play():
     while True:
-        if data == "re":
+        if list[2] == '1':
             channel2.play(re)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
 def mi_play():
     while True:
-        if data == "mi":
+        if list[3] == '1':
             channel3.play(mi)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
 def fa_play():
     while True:
-        if data == "fa":
+        if list[4] == '1':
             channel4.play(fa)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
 def sol_play():
     while True:
-        if data == "sol":
+        if list[5] == '1':
             channel5.play(sol)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
 def la_play():
     while True:
-        if data == "la":
+        if list[6] == '1':
             channel6.play(la)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
 def si_play():
     while True:
-        if data == "si":
+        if list[7] == '1':
             channel7.play(si)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
 def high_do_play():
     while True:
-        if data == "high_do":
+        if list[8] == '1':
             channel8.play(high_do)
-            time.sleep(0.5)
+            time.sleep(0.08)
             data = ""
 
 
@@ -122,13 +121,13 @@ t8 = threading.Thread(target=high_do_play)
 t8.start()
 
 while True:
-    data = socket.recv(1024)
-    data = data.decode('utf-8')
-    data = data.split(',')
+    data = socket.recv(1024) # 1024 바이트만큼 데이터 읽어오기
+    data = data.decode('utf-8') #utf-8 형식의 바이트 코드를 문자열로 변환
+    data = data.split(',') # 문자열을 ,로 쪼개기
     lst = []
     lst = data
     print(lst)
-    time.sleep(1)
+    time.sleep(0.08)
     #print("Received: %s" % data)
     day = datetime.datetime.today().weekday()
 
@@ -159,97 +158,3 @@ while True:
     la.set_volume(sound)
     si.set_volume(sound)
     high_do.set_volume(sound)
-
-
-    def resource_path(relative_path):
-        base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
-        return os.path.join(base_path, relative_path)
-
-
-    form_class = uic.loadUiType('first.ui')[0]
-    form_class1 = uic.loadUiType('second.ui')[0]
-    form_class2 = uic.loadUiType('third.ui')[0]
-    form_class3 = uic.loadUiType('fourth.ui')[0]
-    form_class4 = uic.loadUiType('fifth.ui')[0]
-    form_class5 = uic.loadUiType('sixth.ui')[0]
-    form_class6 = uic.loadUiType('seventh.ui')[0]
-
-
-    class WindowClass(QMainWindow, form_class):
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)
-
-
-    class secondwindow(QDialog, QWidget, form_class1):
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)
-
-
-    class thirdwindow(QDialog, QWidget, form_class2):
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)
-
-
-    class fourthwindow(QDialog, QWidget, form_class3):
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)
-
-
-    class fifthwindow(QDialog, QWidget, form_class4):
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)
-
-
-    class sixthwindow(QDialog, QWidget, form_class5):
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)
-
-
-    class seventhwindow(QDialog, QWidget, form_class6):
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)
-
-
-    if __name__ == '__main__':
-        if day == 0:
-            app = QApplication(sys.argv)
-            myWindow = WindowClass()
-            myWindow.show()
-            app.exec_()
-        elif day == 1:
-            app = QApplication(sys.argv)
-            myWindow = secondwindow()
-            myWindow.show()
-            app.exec_()
-        elif day == 2:
-            app = QApplication(sys.argv)
-            myWindow = thirdwindow()
-            myWindow.show()
-            app.exec_()
-        elif day == 3:
-            app = QApplication(sys.argv)
-            myWindow = fourthwindow()
-            myWindow.show()
-            app.exec_()
-        elif day == 4:
-            app = QApplication(sys.argv)
-            myWindow = fifthwindow()
-            myWindow.show()
-            app.exec_()
-        elif day == 5:
-            app = QApplication(sys.argv)
-            myWindow = sixthwindow()
-            myWindow.show()
-            app.exec_()
-        else:
-            app = QApplication(sys.argv)
-            myWindow = seventhwindow()
-            myWindow.show()
-            app.exec_()
