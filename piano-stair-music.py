@@ -55,6 +55,7 @@ def do_play():
                 time.sleep(0.08)
             else:
                 print("no")
+                status = 0
                 time.sleep(0.08)
 
 def re_play():
@@ -67,6 +68,7 @@ def re_play():
                 time.sleep(0.08)
             else:
                 print("no1")
+                status1 = 0
                 time.sleep(0.08)
         
 
@@ -81,6 +83,7 @@ def mi_play():
                 time.sleep(0.08)
             else:
                 print("no2")
+                status2 = 0
                 time.sleep(0.08)
         
 
@@ -94,6 +97,7 @@ def fa_play():
                 time.sleep(0.08)
             else:
                 print("no3")
+                status3 = 0
                 time.sleep(0.08)
         
 
@@ -108,6 +112,7 @@ def sol_play():
                 time.sleep(0.08)
             else:
                 print("no4")
+                status4 = 0
                 time.sleep(0.08)
             
 
@@ -122,6 +127,7 @@ def la_play():
                 time.sleep(0.08)
             else:
                 print("no5")
+                status5 = 0
                 time.sleep(0.08)
         
 
@@ -136,6 +142,7 @@ def si_play():
                 time.sleep(0.08)
             else:
                 print("no6")
+                status6 = 0
                 time.sleep(0.08)
         
 
@@ -150,6 +157,7 @@ def high_do_play():
                 time.sleep(0.08)
             else:
                 print("no7")
+                status7 = 0
                 time.sleep(0.08)
 
 
