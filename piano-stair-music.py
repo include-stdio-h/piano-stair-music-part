@@ -111,13 +111,14 @@ t8 = threading.Thread(target=high_do_play)
 t8.start()
 
 while True:
-    lst = []
-    data = socket.recv(1024) # 1024 바이트만큼 데이터 읽어오기
-    data = data.decode('utf-8') #utf-8 형식의 바이트 코드를 문자열로 변환
-    lst = data
-    print(lst)
-    #print("Received: %s" % data)
-    time.sleep(0.08)
+    for i in socket.recv(1024):
+        i = i.encode('utf-8')
+        data += i
+        if i == ']':
+            data = list(data)
+            print(data)
+            data = ''
+            time.sleep(0.08)
     day = datetime.datetime.today().weekday()
 
     if day == 0 and change_st == 1:
