@@ -10,7 +10,7 @@ import threading
 from bluetooth import *
 
 socket = BluetoothSocket(RFCOMM)
-socket.connect(("블루투스 주소", 1))
+socket.connect(("98:D3:71:F9:6A:40", 1))
 print("bluetooth connected!")
 
 pygame.mixer.init(frequency=44100, size=-16, channels=1, buffer=2 ** 12)
