@@ -34,61 +34,123 @@ music = ["/do.wav", "/re.wav", "/mi.wav",
 
 print(musical)
 
+data = ''
+
+status = 0
+status1 = 0
+status2 = 0
+status3 = 0
+status4 = 0
+status5 = 0
+status6 = 0
+status7 = 0
 
 def do_play():
     while True:
-        if list[1] == '1':
-            channel1.play(do)
-            time.sleep(0.08)
-
+        global status
+        while not(status == 1):
+            if lst[1] == '1':
+                channel1.play(do)
+                status = 1
+                time.sleep(0.08)
+            else:
+                print("no")
+                time.sleep(0.08)
 
 def re_play():
     while True:
-        if lst[2] == '1':
-            channel2.play(re)
-            time.sleep(0.08)
+        global status1
+        while not(status1 == 1):
+            if (lst[3] == '1'):
+                channel2.play(re)
+                status1 = 1
+                time.sleep(0.08)
+            else:
+                print("no1")
+                time.sleep(0.08)
+        
 
 
 def mi_play():
     while True:
-        if lst[3] == '1':
-            channel3.play(mi)
-            time.sleep(0.08)
-
+        global status2
+        while not(status2 == 1):
+            if (lst[5] == '1'):
+                channel3.play(mi)
+                status2 = 1
+                time.sleep(0.08)
+            else:
+                print("no2")
+                time.sleep(0.08)
+        
 
 def fa_play():
     while True:
-        if lst[4] == '1':
-            channel4.play(fa)
-            time.sleep(0.08)
+        global status3
+        while not(status3 == 1):
+            if (lst[7] == '1'):
+                channel4.play(fa)
+                status3 = 1
+                time.sleep(0.08)
+            else:
+                print("no3")
+                time.sleep(0.08)
+        
 
 
 def sol_play():
     while True:
-        if lst[5] == '1':
-            channel5.play(sol)
-            time.sleep(0.08)
+        global status4
+        while not(status4 == 1):
+            if (lst[9] == '1'):
+                channel5.play(sol)
+                status4 = 1
+                time.sleep(0.08)
+            else:
+                print("no4")
+                time.sleep(0.08)
+            
 
 
 def la_play():
     while True:
-        if lst[6] == '1':
-            channel6.play(la)
-            time.sleep(0.08)
+        global status5
+        while not(status5 == 1):
+            if (lst[11] == '1'):
+                channel6.play(la)
+                status5 = 1
+                time.sleep(0.08)
+            else:
+                print("no5")
+                time.sleep(0.08)
+        
 
 
 def si_play():
     while True:
-        if lst[7] == '1':
-            channel7.play(si)
-            time.sleep(0.08)
+        global status6
+        while not(status6 == 1):
+            if (lst[13] == '1'):
+                channel7.play(si)
+                status6 = 1
+                time.sleep(0.08)
+            else:
+                print("no6")
+                time.sleep(0.08)
+        
 
 
 def high_do_play():
     while True:
-        if lst[8] == '1':
-            channel8.play(high_do)
-            time.sleep(0.08)
+        global status7
+        while not(status7 == 1):
+            if (lst[15] == '1'):
+                 channel8.play(high_do)
+                status7 = 1
+                time.sleep(0.08)
+            else:
+                print("no7")
+                time.sleep(0.08)
 
 
 threads = []
