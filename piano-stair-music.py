@@ -49,7 +49,7 @@ def do_play():
     while True:
         global status
         while not(status == 1):
-            if lst[1] == '1':
+            if data[1] == '1':
                 channel1.play(do)
                 status = 1
                 time.sleep(0.08)
@@ -62,7 +62,7 @@ def re_play():
     while True:
         global status1
         while not(status1 == 1):
-            if (lst[3] == '1'):
+            if (data[3] == '1'):
                 channel2.play(re)
                 status1 = 1
                 time.sleep(0.08)
@@ -77,7 +77,7 @@ def mi_play():
     while True:
         global status2
         while not(status2 == 1):
-            if (lst[5] == '1'):
+            if (data[5] == '1'):
                 channel3.play(mi)
                 status2 = 1
                 time.sleep(0.08)
@@ -91,7 +91,7 @@ def fa_play():
     while True:
         global status3
         while not(status3 == 1):
-            if (lst[7] == '1'):
+            if (data[7] == '1'):
                 channel4.play(fa)
                 status3 = 1
                 time.sleep(0.08)
@@ -106,7 +106,7 @@ def sol_play():
     while True:
         global status4
         while not(status4 == 1):
-            if (lst[9] == '1'):
+            if (data[9] == '1'):
                 channel5.play(sol)
                 status4 = 1
                 time.sleep(0.08)
@@ -121,7 +121,7 @@ def la_play():
     while True:
         global status5
         while not(status5 == 1):
-            if (lst[11] == '1'):
+            if (data[11] == '1'):
                 channel6.play(la)
                 status5 = 1
                 time.sleep(0.08)
@@ -136,7 +136,7 @@ def si_play():
     while True:
         global status6
         while not(status6 == 1):
-            if (lst[13] == '1'):
+            if (data[13] == '1'):
                 channel7.play(si)
                 status6 = 1
                 time.sleep(0.08)
@@ -151,7 +151,7 @@ def high_do_play():
     while True:
         global status7
         while not(status7 == 1):
-            if (lst[15] == '1'):
+            if (data[15] == '1'):
                  channel8.play(high_do)
                 status7 = 1
                 time.sleep(0.08)
