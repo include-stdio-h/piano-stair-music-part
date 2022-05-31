@@ -3,8 +3,8 @@ import time
 #import pygame
 from bluetooth import *
 
-#pygame.init()
-#pygame.mixer.init()
+pygame.init()
+pygame.mixer.init()
 socket = BluetoothSocket( RFCOMM )
 socket.connect(("98:D3:71:F9:6A:40", 1))
 print("bluetooth connected!")
@@ -12,20 +12,20 @@ print("bluetooth connected!")
 data = ''
 lst = [0] * 17
 
-#do = pygame.mixer.Sound("do.wav")
-#re = pygame.mixer.Sound("re.wav")
-#mi = pygame.mixer.Sound("mi.wav")
-#pa = pygame.mixer.Sound("fa.wav")
-#sol = pygame.mixer.Sound("sol.wav")
-#ra = pygame.mixer.Sound("la.wav")
-#si = pygame.mixer.Sound("si.wav")
-#high_do = pygame.mixer.Sound("highdo.wav")
+do = pygame.mixer.Sound("do.wav")
+re = pygame.mixer.Sound("re.wav")
+mi = pygame.mixer.Sound("mi.wav")
+pa = pygame.mixer.Sound("fa.wav")
+sol = pygame.mixer.Sound("sol.wav")
+ra = pygame.mixer.Sound("la.wav")
+si = pygame.mixer.Sound("si.wav")
+high_do = pygame.mixer.Sound("highdo.wav")
 
 def do_play():
    while True:
         if lst[1] == '1':
 
-            #do.play()
+            do.play()
 
             while lst[1] == '1':
                 time.sleep(0.08)
@@ -35,7 +35,7 @@ def re_play():
         
         if lst[3] == '1':
             
-            #re.play()
+            re.play()
             
             while lst[3] == '1':
                 time.sleep(0.08)
@@ -45,7 +45,7 @@ def mi_play():
         
         if lst[5] == '1':
 
-            #mi.play()
+            mi.play()
             
             while lst[5] == '1':
                 time.sleep(0.08)
@@ -55,7 +55,7 @@ def fa_play():
        
         if lst[7] == '1':
            
-            #fa.play()
+            fa.play()
             
             while lst[7] == '1':
                 time.sleep(0.08)
@@ -65,7 +65,7 @@ def sol_play():
         
         if lst[9] == '1':
             
-            #sol.play()
+            sol.play()
             
             while lst[9] == '1':
                 time.sleep(0.08)
@@ -75,7 +75,7 @@ def la_play():
         
         if lst[11] == '1':
             
-            #la.play()
+            la.play()
             
             while lst[11] == '1':
                 time.sleep(0.08)
@@ -85,7 +85,7 @@ def si_play():
         
         if lst[13] == '1':
             
-            #si.play()
+            si.play()
             
             while lst[13] == '1':
                 time.sleep(0.08)
@@ -120,9 +120,8 @@ t8.start()
 
 while True:
     for i in socket.recv(1024):
-        i = chr(i).encode('utf-8').decode('utf-8')
-        #i = i.encode('utf-8')
-        data += i
+        i = chr(i).encode('utf-8').decode('utf-8') #아스키코드를 문자열로 변환
+        data += i #data에 문자열을 합치기
         if i == ']':
             data = list(data)
             for h in range(len(data)):
