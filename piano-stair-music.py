@@ -9,8 +9,8 @@ socket = BluetoothSocket( RFCOMM )
 socket.connect(("98:D3:71:F9:6A:40", 1))
 print("bluetooth connected!")
 
-data = ''
-lst = [0] * 17
+data = '' #문자열을 저장할 변수
+lst = [0] * 17 #리스트 
 
 do = pygame.mixer.Sound("do.wav")
 re = pygame.mixer.Sound("re.wav")
@@ -123,8 +123,8 @@ while True:
         i = chr(i).encode('utf-8').decode('utf-8') #아스키코드를 문자열로 변환
         data += i #data에 문자열을 합치기
         if i == ']':
-            data = list(data)
-            for h in range(len(data)):
+            data = list(data) #data를 리스트로 변경
+            for h in range(len(data)): 
                 lst[h] = data[h]
                 print(lst)
             time.sleep(0.08)
