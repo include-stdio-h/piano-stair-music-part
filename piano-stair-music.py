@@ -3,8 +3,9 @@ import time
 import pygame
 from bluetooth import *
 
-pygame.init()
 pygame.mixer.init()
+pygame.init()
+
 socket = BluetoothSocket( RFCOMM )
 socket.connect(("98:D3:71:F9:6A:40", 1))
 print("bluetooth connected!")
@@ -95,7 +96,7 @@ def high_do_play():
         
         if lst[15] == '1':
             
-            #high_do.play()
+            high_do.play()
             
             while lst[15] == '1':
                 time.sleep(0.08)
