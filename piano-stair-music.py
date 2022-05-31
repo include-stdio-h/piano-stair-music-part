@@ -1,6 +1,6 @@
 import threading
 import time
-#import pygame
+import pygame
 from bluetooth import *
 
 pygame.init()
